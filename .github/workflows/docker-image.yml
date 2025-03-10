@@ -20,8 +20,6 @@ jobs:
       with:
        username: ${{ secrets.DOCKERHUB_USERNAME }}
        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Pull Docker Image
-      run: docker pull YOUR_DOCKERHUB_USERNAME/my-custom-ubuntu  # Replace with your actual image
     - name: Build and push to dockerhub
       uses: docker/build-push-action@v5
       with:
