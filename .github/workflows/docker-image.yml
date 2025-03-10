@@ -24,3 +24,9 @@ jobs:
        context: "."
        push: true
        tags: isimrpickle/githubaction:latest
+    - name: Scan docker image for vulnerabilities
+      uses: docker/scout-action@v1
+      with:
+        command: cves
+        image: ${{ secrets.DOCKERHUB_USERNAME }}/dockerfile 
+        platform: linux/amd64
