@@ -23,10 +23,10 @@ jobs:
       with:
        context: "."
        push: true
-       tags: isimrpickle/githubaction:latest
+       tags: isimrpickle/githubaction:latest #build and push this image
     - name: Scan docker image for vulnerabilities
       uses: docker/scout-action@v1
       with:
-        command: cves
-        image: ${{ secrets.DOCKERHUB_USERNAME }}/dockerfile 
+        command: cves #for scouting
+        image: isimrpickle/githubaction:latest
         platform: linux/amd64
