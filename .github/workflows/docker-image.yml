@@ -25,7 +25,7 @@ jobs:
        push: true
        tags: isimrpickle/githubaction:latest #build and push this image
     - name: Scan docker image for vulnerabilities
-      uses: docker/scout/scout-action@v1 
+      uses: docker/scout-action@v1 
       with:
         command: cves 
         image: isimrpickle/githubaction:latest
